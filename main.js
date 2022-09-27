@@ -56,14 +56,15 @@ function addContact() {
   displayContacts();  
 }
 
+
 function removeContact() {
-  let index = +prompt("Enter # of contact")
-  if (index >= 0 && index < contacts.length) {
+  let removeEmail = prompt("Enter email of contact")
+    let index = findByEmail(removeEmail)
     contacts.splice(index, 1);
     saveContact();
     displayContacts();
-  }
-}
+  } 
+
 
 function displayByName() {
   let outputStr = '';
@@ -140,4 +141,3 @@ function getContact(contact, i) {
     </div>
     `;
   }
-
